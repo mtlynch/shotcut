@@ -2,9 +2,9 @@ name: build-shotcut-linux
 
 on:
   workflow_dispatch:
-  schedule:
-    # nightly
-    - cron: '0 8 * * *'
+  pull_request:
+    types: [opened, reopened]
+  push:
 
 env:
   IMAGE_NAME: mltframework/shotcut-build:qt6.4.3-ubuntu20.04
